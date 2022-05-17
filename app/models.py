@@ -18,3 +18,6 @@ class Users(db.Model):
 
   def verify_password(self,password):
     return check_password_hash(self.secure_password,password)
+
+  def __repr__(self):
+    return f"User('{self.username}')"
