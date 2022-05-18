@@ -11,6 +11,8 @@ class Config:
     ALLOWED_EXTENSIONS = { 'png', 'jpg', 'jpeg', }
 
 
+
+
 class DevConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI')
