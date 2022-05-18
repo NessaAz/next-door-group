@@ -1,8 +1,20 @@
 {%extends 'base.html'%} 
 
 {%block body%}
-{% include 'navbar.html' %}
+<div class="container">
+    <p class="fs-1">Hoods From DB</p>
+    {%for hood in hoods%}
+    <p>Name: {{hood['name']}}
+        <li>About: {{hood['about']}}</li>
+        <li>Members: {{hood['members']}}</li>
+        <li>Ammenities: {{hood['amenities']}}</li>
+        <li>Admin: {{hood['user_id']}}</li>
 
-<h1>These are the hoods </h1>
+    </p>
+
+    {%endfor%}
+</div>
+
+
 
 {%endblock%}
