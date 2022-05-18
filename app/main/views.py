@@ -27,7 +27,7 @@ def addhood():
         db.session.commit()
         
         filename = photos.save(form.hood_pic.data)
-        path = f'photos/{filename}'
+        path = f'images/{filename}'
         hood.hood_pic = path
 
         return redirect(url_for('main_blueprint.all_hoods', hood_pic = hood_pic))
