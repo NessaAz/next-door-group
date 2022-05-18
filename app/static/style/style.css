@@ -33,3 +33,34 @@ body{
     width: 30%;
     margin-left: 40px;
 }
+.vector_text p{
+    font-weight: 900;
+    font-size: 28px;
+    color: #163469;
+    line-height: 32px;
+
+}
+.vector_text button{
+    background-color: #f96b6b;
+    color: #f1f2f6;
+    padding: 10px 20px;
+    border:none;
+    border-radius: 10px;
+}
+.app_content{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+    background-color: #f1f2f6;
+}
+.app_vect{
+    width: 50%;
+}
+.app_vect img{
+    width: 100%;
+    height: 100%;
+}
+.app_text{
+    width: 50%;
+}
