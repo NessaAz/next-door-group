@@ -3,6 +3,9 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from .main import main_blueprint
 from .auth import auth_blueprint
+from flask_mail import Mail
+
+mail = Mail()
 
 db = SQLAlchemy()
 from .models import Users
