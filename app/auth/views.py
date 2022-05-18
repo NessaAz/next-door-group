@@ -2,6 +2,7 @@ from . import auth_blueprint
 from flask import render_template,url_for,flash,redirect,request
 from .forms import SignupForm,LoginForm
 from flask_login import login_user,login_required,logout_user
+from .. import db
 from ..models import Users
 
 
@@ -10,9 +11,10 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         user = Users.query.filter_by(username = form.username.data).first()
-        if user != None and user.verify_password(form.password.data):
-            login_user(user,form.remember.data)
-            return redirect(request.args.get('next') or url_for('main.index'))
+        if user is not None:
+            print("working")
+            login_user(user, form.remember.data)
+            return redirect(request.args.get('next') or url_for('main_blueprint.home'))
         flash('Invalid username or Password')
     return render_template('auth/login.html', form=form)
 
@@ -21,8 +23,9 @@ def signup():
     form = SignupForm()
     if form.validate_on_submit():
         user = Users(email = form.email.data, username = form.username.data, password = form.password.data)
-        user.save_u()
-        return redirect(url_for('auth.login'))
+        db.session.add(user)
+        db.session.commit()
+        return redirect(url_for('auth_blueprint.login'))
     return render_template('auth/signup.html', form = form)
 
 
@@ -31,5 +34,5 @@ def signup():
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for("main.index"))
+    return redirect(url_for("main_blueprint.index"))
 

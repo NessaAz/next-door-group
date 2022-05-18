@@ -14,9 +14,8 @@
                 <div class="mb-3">
                 {{form.hidden_tag()}}
                 {% if form.errors %}
-                {{form.errors['email']}}
+                {{form.errors['username']}}
                 {{form.errors['password']}}
-                {{form.errors[' password_confirm']}}
                 {%endif%}
                 </div>
 
