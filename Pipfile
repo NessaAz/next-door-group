@@ -13,7 +13,7 @@ autopep8 = "*"
 psycopg2 = "*"
 psycopg2-binary = "*"
 flask-login = "*"
-
+flask-uploads = "*"
 
 [dev-packages]
 
