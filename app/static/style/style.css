@@ -1,11 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
-* {
-  overflow-x: hidden;
-}
+
 body {
   margin: 0;
   padding: 0;
   font-family: "Varela Round", sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+*{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: 'Varela Round', sans-serif;
+
 }
 .navbar{
     background-color: #5f8cc5;
@@ -170,6 +175,7 @@ body {
   font-size: 76px;
   color: #000080;
 }
+  
 .footer_cnt{
     background-color: #f1f2f6;
 }
@@ -191,3 +197,20 @@ body {
     padding: 0 10px;
     text-decoration: none;
 }
+
+
+
+
+/* ADDHOOD SECTION */
+.hood-btn{
+    background-color: #fa6b6b;
+    border-color: #fa6b6b;
+    color: #f1f2f6;
+}
+
+.hood-btn:hover{
+    color: #f1f2f6;
+    opacity: 0.8;
+
+}
+

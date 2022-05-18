@@ -1,0 +1,39 @@
+{%extends 'base.html'%} 
+
+{%block body%}
+<h1>Hood Form </h1>
+
+<div class="container">
+
+
+    <form enctype=multipart/form-data method="POST">
+
+        <div class="mb-3">
+        {{form.hidden_tag()}}
+        {% if form.errors %}
+        {{form.errors['username']}}
+        {{form.errors['password']}}
+        {%endif%}
+        </div>
+
+        <div class="mb-3">
+            {{form.name.label(class='form-label')}}
+            {{form.name(class='form-control')}}
+        </div>
+
+        <div class="mb-3">
+            {{form.about.label(class='form-label')}}
+            {{form.about(class='form-control')}}
+        </div>
+        <div class="mb-3">
+            {{form.hood_pic.label(class='form-label')}}
+            {{form.hood_pic(class='form-control')}}
+        </div>
+        <div class="mb-3">
+            {{form.submit(class='btn hood-btn rounded')}}
+        </div>
+
+    </form>
+</div>
+
+{%endblock%}

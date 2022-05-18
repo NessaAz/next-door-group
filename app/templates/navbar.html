@@ -1,23 +1,44 @@
-
-{%block body%}
+{%block styles%}
+<link rel="stylesheet" href="{{url_for('static', filename=" style/style.css")}}">
+<link rel="stylesheet" href="{{url_for('static', filename=" style/font-awesome.min.css")}}">
+{%endblock%}
 
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
+
     <a class="navbar-brand" href="#"><img src="{{url_for('static', filename='/images/logo.png')}}" width=54px; alt=""></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        {%if current_user.is_authenticated%}
+        <li class="nav-item">
+          <a class="nav-link" href="/auth/logout">Logout</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Signup</a>
+          <a class="nav-link" href="#">Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
+          <a class="nav-link" href="/add_hood">Add Hood</a>
         </li>
+        {%else%}
+        <li class="nav-item">
+          <a class="nav-link" href="/auth/signup">Signup</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/auth/login">Login</a>
+        </li>
+        {%endif%}
+
       </ul>
 
       <!-- <form class="d-flex" role="search">
@@ -27,5 +48,3 @@
     </div>
   </div>
 </nav>
-
-{%endblock%}

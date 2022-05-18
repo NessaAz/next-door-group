@@ -1,3 +1,11 @@
 from flask_wtf import FlaskForm
-from wtforms import TextAreaField, EmailField, SearchField, StringField
-from wtforms.validators import DataRequired, EqualTo
+from wtforms import TextAreaField, StringField, SubmitField
+from flask_wtf.file import FileField
+from wtforms.validators import DataRequired
+
+
+class AddHoodForm(FlaskForm):
+    name = StringField('Hood Name', validators=[DataRequired()])
+    about =TextAreaField('Tell us about your hood', validators=[DataRequired()])
+    hood_pic = FileField('Photo of the hood', validators=[DataRequired()])
+    submit = SubmitField('Add Hood')
