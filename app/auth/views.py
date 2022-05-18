@@ -5,7 +5,7 @@ from flask_login import login_user,login_required,logout_user
 from ..models import Users
 
 
-auth_blueprint.route('/login', methods = ['GET','POST'])
+@auth_blueprint.route('/login', methods = ['GET','POST'])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
