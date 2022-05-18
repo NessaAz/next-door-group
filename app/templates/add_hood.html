@@ -2,20 +2,20 @@
 
 {%block body%}
 <div class="container-fluid add-hood">
-    <img src="{{url_for('static', filename='images/hoods.png')}}" class="add-hood-img w-100">
 
-    <div class="add-hood-logo">
-        <i class="fa fa-circle fs-4" style='color: #fa6b6b;'aria-hidden="true"></i>
-        <span class="fs-3">Logo</span>
+        <i class="fa fa-circle pt-3" style='color: #fa6b6b;' aria-hidden="true"></i>
+        <div class="add-hood-logo ps-3">
+        <span class="fs-4">
+            <a href="{{url_for('main_blueprint.home')}}">Logo</a>
+        </span>
     </div>
 
-    <div class="add-hood-text fs-1">
+    <div class="add-hood-text fs-3 mt-5 pt-5 ps-3">
         Add your hood from here
     </div>
 </div>
 
 <div class="container-fluid add-hood-form">
-
     <div class="row">
         <div class="col-md-6 ">
             some other text
@@ -53,6 +53,7 @@
             </div>
         </div>
     </div>
+</div>
 
 
 
