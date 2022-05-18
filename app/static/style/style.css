@@ -7,13 +7,31 @@ body {
   padding: 0;
   font-family: "Varela Round", sans-serif;
 }
+.navbar{
+    background-color: #5f8cc5;
+    color: #f1f2f6;
+}
+.nav-link{
+    color: #f1f2f6;
+
+}
 .hero-section {
     background-image: url(/static/images/imagebz.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 427px;
+    height: 400px;
     background-position: bottom;
     align-items: center;
+}
+.hero-text p{
+    font-size: 25px;
+
+}
+
+.hero-text h1 {
+    color: #f1f2f6
+
+
 }
 .hero-text,
 .popular-text {
