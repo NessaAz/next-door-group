@@ -7,8 +7,7 @@ load_dotenv(find_dotenv())
 class Config:
     SECRET_KEY=os.getenv('SECRET_KEY')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    UPLOAD_FOLDER = 'static/images/photos'
-    ALLOWED_EXTENSIONS = { 'png', 'jpg', 'jpeg', }
+
 
 
 class DevConfig(Config):

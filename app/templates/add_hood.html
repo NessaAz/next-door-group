@@ -1,39 +1,59 @@
-{%extends 'base.html'%} 
+{%extends 'base.html'%}
 
 {%block body%}
-<h1>Hood Form </h1>
+<div class="container-fluid add-hood">
+    <img src="{{url_for('static', filename='images/hoods.png')}}" class="add-hood-img w-100">
 
-<div class="container">
+    <div class="add-hood-logo">
+        <i class="fa fa-circle fs-4" style='color: #fa6b6b;'aria-hidden="true"></i>
+        <span class="fs-3">Logo</span>
+    </div>
 
-
-    <form enctype=multipart/form-data method="POST">
-
-        <div class="mb-3">
-        {{form.hidden_tag()}}
-        {% if form.errors %}
-        {{form.errors['username']}}
-        {{form.errors['password']}}
-        {%endif%}
-        </div>
-
-        <div class="mb-3">
-            {{form.name.label(class='form-label')}}
-            {{form.name(class='form-control')}}
-        </div>
-
-        <div class="mb-3">
-            {{form.about.label(class='form-label')}}
-            {{form.about(class='form-control')}}
-        </div>
-        <div class="mb-3">
-            {{form.hood_pic.label(class='form-label')}}
-            {{form.hood_pic(class='form-control')}}
-        </div>
-        <div class="mb-3">
-            {{form.submit(class='btn hood-btn rounded')}}
-        </div>
-
-    </form>
+    <div class="add-hood-text fs-1">
+        Add your hood from here
+    </div>
 </div>
 
-{%endblock%}
+<div class="container-fluid add-hood-form">
+
+    <div class="row">
+        <div class="col-md-6 ">
+            some other text
+        </div>
+
+        <div class="col-md-6 pt-5 pe-5 mb-5">
+            <div class="form-group form-control">
+                <p class="fs-3 text-center p-2 mt-4">List Your Hood</p>
+                <form enctype=multipart/form-data method="POST" class="p-3">
+                    <div class="mb-3">
+                        {{form.hidden_tag()}}
+                        {% if form.errors %}
+                        {{form.errors['username']}}
+                        {{form.errors['password']}}
+                        {%endif%}
+                    </div>
+
+                    <div class="mb-3">
+                        {{form.name.label(class='form-label')}}
+                        {{form.name(class='form-control')}}
+                    </div>
+
+                    <div class="mb-3">
+                        {{form.about.label(class='form-label')}}
+                        {{form.about(class='form-control')}}
+                    </div>
+                    <div class="mb-3">
+                        {{form.hood_pic.label(class='form-label')}}
+                        {{form.hood_pic(class='form-control')}}
+                    </div>
+                    <div class="mb-3">
+                        {{form.submit(class='btn hood-btn rounded mt-3')}}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    {%endblock%}

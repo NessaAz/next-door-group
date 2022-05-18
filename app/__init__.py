@@ -21,7 +21,8 @@ def create_app(config_name):
     
     from config import config_options
     app.config.from_object(config_options[config_name])
-    app.config['UPLOADED_PHOTOS_DEST'] = 'static/images/photos'
+    app.config['UPLOADED_PHOTOS_DEST']='static/images'
+    app.config['ALLOWED_EXTENSIONS']='{png', 'jpg', 'jpeg}'
     
     from .main import main_blueprint
     app.register_blueprint(main_blueprint)

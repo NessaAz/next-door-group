@@ -75,5 +75,33 @@
 .hood-btn:hover{
     color: #f1f2f6;
     opacity: 0.8;
+}
 
+.add-hood{
+    margin: 0 ;
+    padding: 0;
+}
+
+.add-hood-form{
+    background-color:#f1f2f6 ;
+    position: absolute;
+    top: 50%;
+}
+.add-hood-img{
+    position: absolute;
+}
+.add-hood-text{
+    position: relative;
+    padding-top: 20vh;
+    padding-left: 5vw;
+    color: #fff;
+    font-weight: bold;
+}
+
+.add-hood-logo{
+    position: relative;
+    padding-top: 5vh;
+    padding-left: 5vw;
+    color: #fff;
+    font-weight: bold;
 }
