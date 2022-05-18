@@ -1,11 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from .main import main_blueprint
-from .auth import auth_blueprint
-from flask_mail import Mail
 
-mail = Mail()
 
 db = SQLAlchemy()
 from .models import Users
@@ -16,8 +12,10 @@ def create_app(config_name):
     from config import config_options
     app.config.from_object(config_options[config_name])
 
-
+    from .main import main_blueprint
     app.register_blueprint(main_blueprint)
+
+    from .auth import auth_blueprint
     app.register_blueprint(auth_blueprint, url_prefix='/auth')
 
 
