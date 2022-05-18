@@ -1,4 +1,7 @@
-{%extends 'base.html'%} {%block body%}
+{%extends 'base.html'%} 
+
+{%block body%}
+{% include 'navbar.html' %}
 
 <div class="hero-section">
   <div class="hero-text">
@@ -27,8 +30,12 @@
     </p>
   </div>
 
+
   <div class="app-icons">
     <div>
+
+  <div class="app-icons text-center">
+
     <span class="material-symbols-outlined"> security_update_good </span>
     <p>
     Relevant news and information from neighbors, businesses, and public agencies in real time.</p>
@@ -42,7 +49,7 @@
     <p>A secure environment where all neighbors are verified.</p>
   </div>
   </div>
-  <div class="vector_text" align="center">
+  <div class="vector_text text-center"  >
     <p>Instantly connect with your neighborhood</p>
     <button>Sign Up</button>
   </div>
