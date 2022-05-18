@@ -12,7 +12,11 @@ flask-migrate = "*"
 autopep8 = "*"
 psycopg2 = "*"
 psycopg2-binary = "*"
+
+typing-extensions = "*"
+
 flask-login = "*"
+
 
 [dev-packages]
 
