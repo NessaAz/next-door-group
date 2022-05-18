@@ -132,7 +132,7 @@ body {
 #google {
   width: 30%;
 }
-.popular-text h2,
+.popular-text h3,
 .app_text h3 {
   color: #163469;
   font-weight: 900;
@@ -169,4 +169,25 @@ body {
 .app-icons span {
   font-size: 76px;
   color: #000080;
+}
+.footer_cnt{
+    background-color: #f1f2f6;
+}
+.footer{
+    display:flex;
+    justify-content: center;
+    margin-top: 30px;
+
+}
+.hood,.nextdoor,.businesses{
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.footer a{
+    color: #163469;
+    padding: 0 10px;
+    text-decoration: none;
 }
