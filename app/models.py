@@ -1,4 +1,5 @@
 from enum import unique
+from unicodedata import name
 from . import db, login_manager
 from flask_login import UserMixin, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -65,4 +66,18 @@ class Post(db.Model):
     return f"Post('{self.title}', '{self.date_posted}')"
 
 
+class Business(db.Model):
+  id = db.Column(db.Integer, primary_key=True)
+  name = db.Column(db.String(255), nullable=False)
+  email = db.Column(db.String, unique=True, nullable=False)
+  tel = db.Column(db.Integer)
+  description = db.Column(db.Text(), nullable=False)
+  user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+
+    # def save_post(self):
+    #     db.session.add(self)
+    #     db.session.commit()
+
+  def __repr__(self):
+    return f"Business('{self.name}')"
 

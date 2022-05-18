@@ -1,8 +1,9 @@
+import email
 from . import main_blueprint
 from flask import flash, render_template, redirect, url_for, request
 from flask_login import current_user, login_required
-from .forms import AddHoodForm, PostForm
-from ..models import Hoods, Post
+from .forms import AddHoodForm, BusinessForm, PostForm
+from ..models import Business, Hoods, Post
 from .. import db, photos
 from werkzeug.utils import secure_filename
 import uuid
@@ -46,22 +47,6 @@ def hoodpage():
     return render_template('hoodpage.html')
 
 
-# @main_blueprint.route("/post", methods=['GET', 'POST'])
-# @login_required
-# def new_post():
-#     form = PostForm()
-#     if form.validate_on_submit():
-#         post = Post(title=form.title.data, content=form.content.data, author=current_user)
-
-#         db.session.add(post)
-#         db.session.commit()
-#         flash('Your post has been created!', 'success')
-
-
-#         return redirect(url_for('home'))
-#     return render_template('hoodpage.html', title='New Post',
-#                            form=form, legend='New Post')
-
 @main_blueprint.route('/post', methods=['POST', 'GET'])
 def new_post():
     form = PostForm()
@@ -76,3 +61,17 @@ def new_post():
         return redirect(url_for('main_blueprint.hoodpage'))
     return render_template('post.html', form=form)
 
+
+@main_blueprint.route('/business', methods=['POST', 'GET'])
+def new_business():
+    form = BusinessForm()
+    if form.validate_on_submit():
+        user_id = current_user._get_current_object().id
+        business = Business(name=form.name.data, email=form.email.data, tel=form.tel.data, description=form.description.data)
+
+        db.session.add(business)
+        db.session.commit()
+        flash('Your business has been added successfully!')
+
+        return redirect(url_for('main_blueprint.hoodpage'))
+    return render_template('business.html', form=form)
