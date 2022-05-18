@@ -62,3 +62,18 @@
 .app_text{
     width: 50%;
 }
+
+
+
+/* ADDHOOD SECTION */
+.hood-btn{
+    background-color: #fa6b6b;
+    border-color: #fa6b6b;
+    color: #f1f2f6;
+}
+
+.hood-btn:hover{
+    color: #f1f2f6;
+    opacity: 0.8;
+
+}
