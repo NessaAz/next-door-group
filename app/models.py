@@ -2,6 +2,7 @@ from enum import unique
 from . import db, login_manager
 from flask_login import UserMixin, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import datetime
 
 
 @login_manager.user_loader
@@ -15,6 +16,7 @@ class Users(UserMixin, db.Model):
   email = db.Column(db.String, unique=True, nullable=False)
   secure_password = db.Column(db.String, nullable=False)
   hoods = db.relationship('Hoods', backref='hoods', lazy=True)
+  posts = db.relationship('Post', backref='author', lazy=True)
 
   @property
   def password(self):
@@ -46,3 +48,21 @@ class Amenities(db.Model):
   police_contact=db.Column(db.String)
   hospital_contact=db.Column(db.String)
   hood_id=db.Column(db.Integer, db.ForeignKey('hoods.id'))
+
+
+class Post(db.Model):
+  id = db.Column(db.Integer, primary_key=True)
+  title = db.Column(db.String(255), nullable=False)
+  content = db.Column(db.Text(), nullable=False)
+  user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+  date_posted  = db.Column(db.DateTime, default=datetime.utcnow)
+
+    # def save_post(self):
+    #     db.session.add(self)
+    #     db.session.commit()
+
+  def __repr__(self):
+    return f"Post('{self.title}', '{self.date_posted}')"
+
+
+

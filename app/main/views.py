@@ -1,8 +1,8 @@
 from . import main_blueprint
-from flask import render_template, redirect, url_for, request
-from flask_login import current_user
-from .forms import AddHoodForm
-from ..models import Hoods
+from flask import flash, render_template, redirect, url_for, request
+from flask_login import current_user, login_required
+from .forms import AddHoodForm, PostForm
+from ..models import Hoods, Post
 from .. import db, photos
 from werkzeug.utils import secure_filename
 import uuid
@@ -39,3 +39,40 @@ def all_hoods():
 
     
     return render_template('all_hoods.html')
+
+
+@main_blueprint.route('/hoodpage')
+def hoodpage():
+    return render_template('hoodpage.html')
+
+
+# @main_blueprint.route("/post", methods=['GET', 'POST'])
+# @login_required
+# def new_post():
+#     form = PostForm()
+#     if form.validate_on_submit():
+#         post = Post(title=form.title.data, content=form.content.data, author=current_user)
+
+#         db.session.add(post)
+#         db.session.commit()
+#         flash('Your post has been created!', 'success')
+
+
+#         return redirect(url_for('home'))
+#     return render_template('hoodpage.html', title='New Post',
+#                            form=form, legend='New Post')
+
+@main_blueprint.route('/post', methods=['POST', 'GET'])
+def new_post():
+    form = PostForm()
+    if form.validate_on_submit():
+        user_id = current_user._get_current_object().id
+        post = Post(title=form.title.data, content=form.content.data, author=current_user)
+
+        db.session.add(post)
+        db.session.commit()
+        flash('Your post has been created!', 'success')
+
+        return redirect(url_for('main_blueprint.hoodpage'))
+    return render_template('post.html', form=form)
+

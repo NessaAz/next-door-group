@@ -9,3 +9,8 @@ class AddHoodForm(FlaskForm):
     about =TextAreaField('Tell us about your hood', validators=[DataRequired()])
     hood_pic = FileField('Photo of the hood', validators=[DataRequired()])
     submit = SubmitField('Add Hood')
+
+class PostForm(FlaskForm):
+    title = StringField('Title', validators=[DataRequired()])
+    content = TextAreaField('Content', validators=[DataRequired()])
+    submit = SubmitField('Post')
