@@ -1,4 +1,7 @@
-{%extends 'base.html'%} {%block body%}
+{%extends 'base.html'%} 
+{% include 'navbar.html' %}
+
+{%block body%}
 
 <div class="hero-section">
   <div class="hero-text">
@@ -19,12 +22,12 @@
     </p>
   </div>
 
-  <div class="app-icons" align="center">
+  <div class="app-icons text-center">
     <span class="material-symbols-outlined"> security_update_good </span>
     <span class="material-symbols-outlined"> edit_location </span>
     <span class="material-symbols-outlined"> cottage </span>
   </div>
-  <div class="vector_text" align="center">
+  <div class="vector_text text-center"  >
     <p>Instantly connect with your neighborhood</p>
     <button>Sign Up</button>
   </div>
