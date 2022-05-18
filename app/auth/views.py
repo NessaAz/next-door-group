@@ -1,10 +1,10 @@
-from . import auth_blueprint , autho
+from . import auth_blueprint 
 from flask import render_template,url_for,flash,redirect,request
-#from ..email import mail_message
+from ..email import mail_message
 from flask_login import login_user,login_required,logout_user
-from .forms import RegForm,LoginForm
-from ..models import User
 from .. import db
+from ..models import User
+from .forms import RegForm,LoginForm
 
 
 
@@ -18,7 +18,7 @@ def login():
     return render_template('autho/login.html')
 
 
-@autho.route('/login', methods = ['GET','POST'])
+@auth_blueprint.route('/login', methods = ['GET','POST'])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
@@ -29,13 +29,13 @@ def login():
         flash('Invalid username or Password')
     return render_template('autho/login.html', loginform = form)
 
-@autho.route('/logout')
+@auth_blueprint.route('/logout')
 @login_required
 def logout():
     logout_user()
     return redirect(url_for("main.index"))
 
-@autho.route('/signup', methods = ["GET","POST"])
+@auth_blueprint.route('/signup', methods = ["GET","POST"])
 def signup():
     form = RegForm()
     if form.validate_on_submit():
@@ -44,3 +44,17 @@ def signup():
         
         return redirect(url_for('auth.login'))
     return render_template('autho/signup.html', r_form = form)
+
+@auth_blueprint.route('/register',methods = ["GET","POST"])
+def register():
+    form = RegForm()
+    if form.validate_on_submit():
+        user = User(email = form.email.data, username = form.username.data,password = form.password.data)
+        db.session.add(user)
+        db.session.commit()
+
+        mail_message("Welcome to next door","email/welcome_user",user.email,user=user)
+
+        return redirect(url_for('auth.login'))
+        title = "New Account"
+    return render_template('autho/register.html',registration_form = form)
