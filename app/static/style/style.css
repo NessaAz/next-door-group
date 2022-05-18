@@ -33,6 +33,9 @@ body{
     width: 30%;
     margin-left: 40px;
 }
+.vector_text{
+    margin-top: 50px;
+}
 .vector_text p{
     font-weight: 900;
     font-size: 28px;
@@ -52,7 +55,7 @@ body{
     flex-direction: row;
     justify-content: center;
     margin-top: 50px;
-    align-items: center;
+
     background-color: #f1f2f6;
 }
 .app_vect{
@@ -65,12 +68,14 @@ body{
 .app_text{
     width: 50%;
     line-height: 33px;
+    margin-top: 80px;
 }
 
 .popular-text h2{
     color: #163469;
     font-weight: 900;
     font-size: 40px;
+
 }
 .popular-images1, .popular-images2{
     display: flex;
@@ -85,17 +90,24 @@ width: 30%;
     width: 100%;
     height: 100%;
 }
+.app-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 30px;
+}
+.app-icons div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 26%;
+    text-align: center;
+    padding: 30px;
+}
 .app-icons span{
     font-size: 76px;
     color:#000080;
+}
 
-}
- .app-icons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
 
-}
-.app-icons span{
-    width:1000px;
-}
