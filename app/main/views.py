@@ -52,7 +52,7 @@ def new_post():
         db.session.add(post)
         db.session.commit()
         flash('Your post has been created!', 'success')
-        return redirect(url_for('main_blueprint.hoodpage'))
+        return redirect(url_for('main_blueprint.hoodpage', hood_id=id))
     return render_template('post.html', form=form)
 
 
@@ -66,7 +66,7 @@ def new_business():
         db.session.add(business)
         db.session.commit()
 
-        return redirect(url_for('main_blueprint.hoodpage',))
+        return redirect(url_for('main_blueprint.hoodpage', hood_id=id))
     return render_template('business.html', form=form)
 
 
