@@ -13,9 +13,7 @@ autopep8 = "*"
 psycopg2 = "*"
 psycopg2-binary = "*"
 flask-login = "*"
-
 gunicorn = "*"
-
 flask-uploads = "*"
 
 
