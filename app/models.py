@@ -1,5 +1,3 @@
-from enum import unique
-from unicodedata import name
 from . import db, login_manager
 from flask_login import UserMixin, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
