@@ -748,4 +748,73 @@ body {
     display: none;
   }
 
+
+
+}
+
+/* ALL HOODS  */
+
+.nav-part .ul{
+  margin:0;
+  padding:0;
+  height:100%;
+  width:260px;
+  position:fixed;
+  top:0;
+  left:0;
+  background-color:#163469;
+}
+
+.nav-part .ul .li{
+  list-style:none;
+}
+
+.wrapper{
+  margin-left:260px;
+  background-color: #f1f2f6;
+}
+
+.section{
+  display:grid;
+  min-height:100vh;
+}
+
+nav ul li{
+  list-style:none;
+}
+
+
+.nav-part .ul .li .a{
+  display:block;
+  text-decoration:none;
+  text-transform:uppercase;
+  font-size:17px;
+  color:#fff;
+  position:relative;
+  padding:15px 0px 15px 25px;
+  transition:all 0.5s;
+}
+
+.nav-part .ul .li .a:hover{
+  content:'';
+  top:0;
+  right:0;
+  height:100%;
+  background:#fff;
+  color: #163469;
+  border-radius:40px 0 0 40px;
+  transition:all 1s;
+}
+
+
+.add-hood-btn {
+  background-color: #fa6b6b;
+  border-color: #fa6b6b;
+  color: #f1f2f6;
+}
+
+.add-hood-btn:hover {
+  color: #f1f2f6;
+  opacity: 0.8;
+
 }

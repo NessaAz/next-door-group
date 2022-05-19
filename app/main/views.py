@@ -1,4 +1,3 @@
-import email
 from . import main_blueprint
 from flask import flash, render_template, redirect, url_for, request
 from flask_login import current_user, login_required
@@ -77,4 +76,11 @@ def hoodpage(hood_id):
     hood= Hoods.query.get(hood_id)
     return render_template('hoodpage.html', posts=posts, businesses=businesses,hood=hood)
 
+ 
     
+
+    
+
+@main_blueprint.route('/join')
+def join():
+    """"""
