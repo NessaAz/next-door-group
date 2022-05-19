@@ -12,7 +12,8 @@ import os
 
 @main_blueprint.route('/')
 def home():
-    return render_template('index.html')
+    hoods = Hoods.query.all()
+    return render_template('index.html',hoods=hoods)
 
 @main_blueprint.route('/add_hood', methods=['POST', 'GET'])
 def addhood():
@@ -35,11 +36,11 @@ def addhood():
         return redirect(url_for('main_blueprint.all_hoods', hood_pic = hood_pic))
     return render_template('add_hood.html', form=form)
 
-
+@main_blueprint.route('/')
 @main_blueprint.route('/all_hoods')
 def all_hoods():
     hoods = Hoods.query.all()
-    return render_template('all_hoods.html', hoods=hoods)
+    return render_template('all_hoods.html',hoods=hoods)
 
 @main_blueprint.route('/post', methods=['POST', 'GET'])
 def new_post():
@@ -76,7 +77,5 @@ def hoodpage(hood_id):
     businesses = Business.query.all()
     hood= Hoods.query.get(hood_id)
     return render_template('hoodpage.html', posts=posts, businesses=businesses,hood=hood)
-
-
 
 
