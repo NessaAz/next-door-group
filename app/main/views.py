@@ -30,7 +30,7 @@ def addhood():
         filename = photos.save(form.hood_pic.data)
         path = f'{filename}'
         hood.hood_pic=path
-        return redirect(url_for('main_blueprint.all_hoods', hood_pic = hood_pic))
+        return redirect(url_for('main_blueprint.all_hoods'))
     return render_template('add_hood.html', form=form)
 
 
