@@ -1,4 +1,4 @@
-from . import auth_blueprint 
+from . import auth_blueprint
 from flask import render_template,url_for,flash,redirect,request
 from .forms import SignupForm,LoginForm
 from flask_login import login_user,login_required,logout_user
@@ -35,4 +35,7 @@ def signup():
 def logout():
     logout_user()
     return redirect(url_for("main_blueprint.home"))
+
+
+
 

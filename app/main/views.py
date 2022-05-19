@@ -1,4 +1,5 @@
 import email
+from pdb import post_mortem
 from . import main_blueprint
 from flask import flash, render_template, redirect, url_for, request
 from flask_login import current_user, login_required
@@ -27,7 +28,7 @@ def addhood():
 
         db.session.add(hood)
         db.session.commit()
-        
+
         filename = photos.save(form.hood_pic.data)
         path = f'{filename}'
         hood.hood_pic=path
@@ -76,7 +77,6 @@ def hoodpage(hood_id):
     hood= Hoods.query.get(hood_id)
     return render_template('hoodpage.html', posts=posts, businesses=businesses,hood=hood)
 
-    
 
 
 
