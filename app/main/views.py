@@ -31,7 +31,7 @@ def addhood():
         path = f'images/{filename}'
         hood.hood_pic = path
 
-        return redirect(url_for('main_blueprint.all_hoods', hood_pic = hood_pic))
+        return redirect(url_for('main_blueprint.hoodpage', hood_pic = hood_pic))
     return render_template('add_hood.html', form=form)
 
 
@@ -41,10 +41,6 @@ def all_hoods():
     
     return render_template('all_hoods.html')
 
-
-@main_blueprint.route('/hoodpage')
-def hoodpage():
-    return render_template('hoodpage.html')
 
 
 @main_blueprint.route('/post', methods=['POST', 'GET'])
@@ -75,3 +71,14 @@ def new_business():
 
         return redirect(url_for('main_blueprint.hoodpage'))
     return render_template('business.html', form=form)
+
+
+@main_blueprint.route('/hoodpage')
+def hoodpage():
+    posts = Post.query.all()
+    businesses = Business.query.all()
+    hoods = Hoods.query.all()
+    return render_template('hoodpage.html', posts=posts, businesses=businesses,
+    hoods=hoods)
+
+    

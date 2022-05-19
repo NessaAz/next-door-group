@@ -1,0 +1,80 @@
+{%extends 'base.html'%}
+
+{%block body%}
+<div class="container-fluid post">
+    <img src="{{url_for('static', filename='images/hoods.png')}}" class="post-img w-100">
+
+    <div class="post-logo">
+        <i class="fa fa-circle fs-4" style='color: #fa6b6b;' aria-hidden="true"></i>
+        <span class="fs-3">Logo</span>
+    </div>
+
+    <div class="post-text fs-1">
+        Add a post
+    </div>
+</div>
+
+<div class="row container-fluid">
+    <div class="col-md-6 ">
+        <div class="hood-posts">
+
+            <h3>Updates</h3>
+            <div class="posts">
+                {% for post in posts %}
+    
+                <div class="post-card">
+                    <p>{{ post.title }}</p>
+                    <p class="post-content">{{ post.content }}</p>
+                </div>
+                {% endfor %}
+    
+            </div>
+    
+        </div>
+        
+    </div>
+
+    <div class="col-md-6 pt-5 pe-5 mb-5">
+        <div class="sidebar">
+            
+            <div class="hood">
+                <div class="row">
+                    {%for hood in hoods%}
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <img class="rounded-circle article-img" src="{{ url_for('static', filename='images/uploads' + hood.hood_pic) }}">
+                            <h5 class="card-title tt">{{ hood.name }}
+                            </h5>
+                            <h6 class="card-text">
+                                <span>Member{{hood.members}}</span>
+                            </h6>
+                            <p class="card-text">{{hood.about}}</p>
+                            <p class="card-text">Amenities: <small class="text-muted">
+                                {{ hood.amenities }}</small></p>
+                            <p class="card-text">Administrator: <small class="text-muted">
+                                {{ hood.user_id }}</small></p>
+                        </div>
+                    </div>
+                    {%endfor%}
+                </div>
+    
+    
+                <h5 class="title">Businesses Around you</h5>
+                {% for business in businesses %}
+                <div class="business">
+                    <h5>{{ business.name }}</h5>
+                    <div class="contacts">
+                        <p>{{ business.email }}</p>
+                        <p>{{ business.tel }}</p>
+                    </div>
+                    <p>{{ business.description }}</p>
+                </div>
+                {% endfor %}
+                <a href="/business">Add a Business</a>
+            </div>
+    
+        </div>
+    </div>
+</div>
+
+</div> {%endblock%}

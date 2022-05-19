@@ -398,3 +398,47 @@ body {
   color: #fff;
   font-weight: bold;
 }
+
+/* hoodpage section*/
+.hood-posts {
+  background-color: #F3F2EF;
+  margin-top: 15vh;
+}
+
+.hood-posts>h3 {
+  margin-left: 2%;
+  padding-top: 2%
+}
+
+.posts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  padding: 0 1%;
+  padding-bottom: 2%
+}
+
+.post-card {
+  width: 23.2%;
+  margin: 0.4% 0.8%;
+  background-color: #fff
+}
+
+.post-card>p,
+.post-card>div {
+  padding: 0 7%
+}
+
+.post-card>.post-content {
+  font-size: 12px;
+  font-weight: 500;
+  color: #141414
+}
+
+.sidebar{
+  margin-top: 10vh;
+}
