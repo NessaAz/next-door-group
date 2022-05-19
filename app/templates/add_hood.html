@@ -2,58 +2,96 @@
 
 {%block body%}
 <div class="container-fluid add-hood">
-    <img src="{{url_for('static', filename='images/hoods.png')}}" class="add-hood-img w-100">
 
-    <div class="add-hood-logo">
-        <i class="fa fa-circle fs-4" style='color: #fa6b6b;'aria-hidden="true"></i>
-        <span class="fs-3">Logo</span>
+    <div class="d-flex justify-content-between ps-5 ms-5 pe-5 me-5 ">
+            <div class="add-hood-logo pt-3 mt-3">
+                <i class="fa fa-circle fs-5" style='color: #fa6b6b;' aria-hidden="true"></i>
+                <span class="fs-4">
+                    <a href="{{url_for('main_blueprint.home')}}">Logo</a>
+                </span>
+            </div>
+        <div class="pt-3 mt-3">
+            {%if current_user.is_authenticated%}  
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Profile
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                    <li>
+                        <a class="dropdown-item" href="#"><i class="fa fa-user" aria-hidden="true"></i>Dashboard</a>
+                    </li>
+                    <hr>
+                    <li>
+                        <a class="dropdown-item" href="/auth/logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{{url_for('main_blueprint.all_hoods')}}">Hoods</a>
+                    </li>
+                  </ul>
+            {%endif%}
+        </div>
+
+        <i class="fa fa-circle pt-3" style='color: #fa6b6b;' aria-hidden="true"></i>
+        <div class="add-hood-logo ps-3">
+        <span class="fs-4">
+            <a href="{{url_for('main_blueprint.home')}}">Logo</a>
+        </span>
     </div>
 
-    <div class="add-hood-text fs-1">
+    <div class="add-hood-text fs-3 mt-5 pt-5 ps-3">
         Add your hood from here
+
     </div>
+    <div class="add-hood-text fs-3 ps-5 ms-5 pe-5 me-5 pt-5 mt-5 ">Add your hood from here</div>
 </div>
 
 <div class="container-fluid add-hood-form">
-
     <div class="row">
         <div class="col-md-6 ">
             some other text
         </div>
 
-        <div class="col-md-6 pt-5 pe-5 mb-5">
-            <div class="form-group form-control">
-                <p class="fs-3 text-center p-2 mt-4">List Your Hood</p>
-                <form enctype=multipart/form-data method="POST" class="p-3">
-                    <div class="mb-3">
-                        {{form.hidden_tag()}}
-                        {% if form.errors %}
-                        {{form.errors['username']}}
-                        {{form.errors['password']}}
-                        {%endif%}
+<div class="container-fluid add-hood-form">
+            <div class="row">
+                <div class="col-md-6 pt-5 pe-5 mb-5">
+                    <div class="fs-1">
+                        Meta Info Here
                     </div>
+                </div>
 
-                    <div class="mb-3">
-                        {{form.name.label(class='form-label')}}
-                        {{form.name(class='form-control')}}
-                    </div>
+                <div class="col-md-6 pt-5 pe-5 mb-5">
+                    <div class="form-group form-control">
+                        <p class="fs-3 text-center p-2 mt-4">List Your Hood</p>
+                        <form enctype=multipart/form-data method="POST" class="p-3">
+                            <div class="mb-3">
+                                {{form.hidden_tag()}}
+                                {% if form.errors %}
+                                {{form.errors['username']}}
+                                {{form.errors['password']}}
+                                {%endif%}
+                            </div>
 
-                    <div class="mb-3">
-                        {{form.about.label(class='form-label')}}
-                        {{form.about(class='form-control')}}
+                            <div class="mb-3">
+                                {{form.name.label(class='form-label')}}
+                                {{form.name(class='form-control')}}
+                            </div>
+
+                            <div class="mb-3">
+                                {{form.about.label(class='form-label')}}
+                                {{form.about(class='form-control')}}
+                            </div>
+                            <div class="mb-3">
+                                {{form.hood_pic.label(class='form-label')}}
+                                {{form.hood_pic(class='form-control')}}
+                            </div>
+                            <div class="mb-3">
+                                {{form.submit(class='btn hood-btn rounded mt-3')}}
+                            </div>
+                        </form>
                     </div>
-                    <div class="mb-3">
-                        {{form.hood_pic.label(class='form-label')}}
-                        {{form.hood_pic(class='form-control')}}
-                    </div>
-                    <div class="mb-3">
-                        {{form.submit(class='btn hood-btn rounded mt-3')}}
-                    </div>
-                </form>
+                </div>
             </div>
-        </div>
-    </div>
+</div>
+{%endblock%}
 
-
-
-    {%endblock%}
