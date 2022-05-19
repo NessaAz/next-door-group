@@ -610,16 +610,25 @@ body {
 /* hoodpage section*/
 .hood-posts {
   background-color: #F3F2EF;
-  margin-top: 15vh;
+  margin-top: 10px;
 
   background-color: #fa6b6b;
   border-color: #fa6b6b;
   color: #f1f2f6;
+  
 }
 
 .hood-btn:hover {
   color: #f1f2f6;
   opacity: 0.8;
+}
+
+.huria{
+  margin-top: 10px
+
+} 
+.hood-name{
+  margin-left: 45%
 }
 
 .add-hood {
@@ -686,6 +695,18 @@ body {
   font-weight: bold;
 }
 
+.add-btn {
+  background-color: #fa6b6b;
+  border-color: #fa6b6b;
+  color: #f1f2f6;
+
+}
+
+.add-btn:hover {
+  color: #f1f2f6;
+  opacity: 0.8;
+}
+
 /* ALL HOODS  */
 .join-btn {
   background-color: #fa6b6b;
@@ -724,9 +745,13 @@ body {
   background-color: #fff
 }
 
+.post-card p{
+  color: rgb(43, 3, 43);
+}
 .post-card>p,
 .post-card>div {
   padding: 0 7%
+
 }
 
 .post-card>.post-content {
@@ -737,6 +762,10 @@ body {
 
 .sidebar {
   margin-top: 10vh;
+}
+
+.hood h5{
+  color: #f96b6b;
 }
 
 
