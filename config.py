@@ -10,16 +10,13 @@ class Config:
     UPLOAD_FOLDER = 'static/images/photos'
     ALLOWED_EXTENSIONS = { 'png', 'jpg', 'jpeg', }
 
-
-
-
 class DevConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI')
     
 
 class ProdConfig(Config):
-    """"""
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
 
 
 config_options={
