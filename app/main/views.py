@@ -31,23 +31,14 @@ def addhood():
         filename = photos.save(form.hood_pic.data)
         path = f'{filename}'
         hood.hood_pic=path
-
-
         return redirect(url_for('main_blueprint.hoodpage', hood_pic = hood_pic))
-
-        return redirect(url_for('main_blueprint.all_hoods',pic=hood.hood_pic))
-
     return render_template('add_hood.html', form=form)
 
 
 @main_blueprint.route('/all_hoods')
 def all_hoods():
-
-
-    
-    return render_template('all_hoods.html')
-
-
+    hoods = Hoods.query.all()
+    return render_template('all_hoods.html', hoods=hoods)
 
 @main_blueprint.route('/post', methods=['POST', 'GET'])
 def new_post():
@@ -89,6 +80,5 @@ def hoodpage():
 
     
 
-    hoods = Hoods.query.all()
-    return render_template('all_hoods.html', hoods=hoods)
+
 

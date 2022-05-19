@@ -5,11 +5,6 @@
             "sha256": "49320099b0cd6d769d6331a81bc9de370ff5a22b3d5595a95820ecfb9630ce7a"
         },
 
-
-            "sha256": "49320099b0cd6d769d6331a81bc9de370ff5a22b3d5595a95820ecfb9630ce7a"
-
-      },
-
         "pipfile-spec": 6,
         "requires": {
             "python_version": "3.8"
@@ -22,6 +17,8 @@
             }
         ]
     },
+    
+
     "default": {
         "alembic": {
             "hashes": [
@@ -385,12 +382,8 @@
             ],
             "version": "==0.10.2"
         },
-<
 
         "typing-extensions": {
-
-
-
 
         "uploads": {
 
@@ -426,11 +419,9 @@
 
             "markers": "python_version < '3.10'",
 
-            "markers": "python_version >= '3.7'",
-
-
             "version": "==3.8.0"
         }
     },
     "develop": {}
+}
 }
