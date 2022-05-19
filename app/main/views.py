@@ -62,6 +62,7 @@ def new_business():
     if form.validate_on_submit():
         user_id = current_user._get_current_object().id
         business = Business(name=form.name.data, email=form.email.data, tel=form.tel.data, description=form.description.data)
+        
         db.session.add(business)
         db.session.commit()
 
@@ -69,18 +70,18 @@ def new_business():
     return render_template('business.html', form=form)
 
 
-@main_blueprint.route('/hoodpage/<int:hood_id>')
-def hoodpage(hood_id):
+@main_blueprint.route('/hoodpage')
+def hoodpage():
     posts = Post.query.all()
     businesses = Business.query.all()
-    hood= Hoods.query.get(hood_id)
+    hood= Hoods.query.all()
     return render_template('hoodpage.html', posts=posts, businesses=businesses,hood=hood)
 
- 
-    
-
-    
 
 @main_blueprint.route('/join')
 def join():
-    """"""
+    """""" 
+    
+
+    
+
