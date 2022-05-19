@@ -1,9 +1,7 @@
-{%extends 'base.html'%} 
-
-{%block body%}
-{% include 'navbar.html' %}
+{%extends 'base.html'%} {%block body%}
 
 <div class="hero-section">
+  {% include 'navbar.html' %}
   <div class="hero-text">
     <h1>Nextdoor</h1>
     <p>Search for your Neighborhood,Town or City</p>
@@ -33,10 +31,8 @@
     </p>
   </div>
 
-
-  <div class="app-icons">
+ <div class="app-icons">
     <div>
-
       <span class="material-symbols-outlined"> security_update_good </span>
       <p>
         Relevant news and information from neighbors, businesses, and public
@@ -55,26 +51,11 @@
       <p>A secure environment where all neighbors are verified.</p>
     </div>
 
-
-  <div class="app-icons text-center">
-
-    <span class="material-symbols-outlined"> security_update_good </span>
-    <p>
-    Relevant news and information from neighbors, businesses, and public agencies in real time.</p>
-  </div>
-  <div>
-    <span class="material-symbols-outlined"> edit_location </span>
-    <p>The only way to instantly connect to the people, businesses, and happenings near your home.</p>
-  </div>
-  <div>
-    <span class="material-symbols-outlined"> cottage </span>
-    <p>A secure environment where all neighbors are verified.</p>
   </div>
 
-  </div>
-  <div class="vector_text text-center"  >
+  <div class="vector_text text-center">
     <p>Instantly connect with your neighborhood</p>
-    <button>Sign Up</button>
+    <button><a href="/auth/signup">Sign Up</a></button>
   </div>
 </div>
 <div class="app_content">
@@ -82,10 +63,10 @@
     <img src="{{url_for('static', filename='/images/phone.jpg')}}" alt="" />
   </div>
   <div class="app_text">
-    <h3>The go-to app for ......</h3>
+    <h3>The go-to app for questions regarding your hood</h3>
     <p>
       Download the free Nextdoor app for expertise you can count on,<br />
-      and fit in with confidence.
+      and fit into your living area with confidence.
     </p>
 
     <div>
@@ -118,56 +99,62 @@
 
   <div class="popular-images1">
     <div class="img_pop">
-      <img src="{{url_for('static', filename='/images/nbh1.jpg')}}" alt="" />
+      <img src="{{url_for('static', filename='/images/nbh1.jpg')}}" alt="hood image" />
+      <p>Lower Kabete</p>
     </div>
     <div class="img_pop">
-      <img src="{{url_for('static', filename='/images/nbh2.jpg')}}" alt="" />
+      <img src="{{url_for('static', filename='/images/nbh2.jpg')}}" alt="hood image" />
+      <p>Roysambu</p>
     </div>
     <div class="img_pop">
-      <img src="{{url_for('static', filename='/images/nbh3.jpg')}}" alt="" />
+      <img src="{{url_for('static', filename='/images/nbh3.jpg')}}" alt="hood image" />
+      <p>Kikuyu</p>
     </div>
     <img src="" alt="" />
   </div>
 
   <div class="popular-images2">
     <div class="img_pop">
-      <img src="{{url_for('static', filename='/images/nbh4.jpg')}}" alt="" />
+      <img src="{{url_for('static', filename='/images/nbh4.jpg')}}" alt="hood image" />
+      <p>Juja</p>
+
+
     </div>
     <div class="img_pop">
-      <img src="{{url_for('static', filename='/images/nbh5.jpg')}}" alt="" />
+      <img src="{{url_for('static', filename='/images/nbh5.jpg')}}" alt="hood image" />
+      <p>Ruai</p>
     </div>
     <div class="img_pop">
-      <img src="{{url_for('static', filename='/images/nbh6.jpg')}}" alt="" />
+      <img src="{{url_for('static', filename='/images/nbh6.jpg')}}" alt="hood image" />
+     <p>Mlolongo</p>
     </div>
     <img src="" alt="" />
   </div>
 </div>
 
 <div class="footer_cnt">
-<div class="footer">
-  <div class="nextdoor">
-    <p>Nextdoor</p>
-    <a href="#">About</a>
-    <a href="#">Media</a>
-    <a href="#">Help</a>
-    <a href="#">Legal and Terms</a>
-  </div>
-  <div class="hood">
-    <p>Neighbourhood</p>
-    <a href="#">Get Started</a>
-    <a href="#">Events</a>
-    <a href="#">Neighbourhoods</a>
-  </div>
-  <div class="businesses">
-    Businesses
-    <a href="#">Food and Entertainement</a>
-    <a href="#">Medical</a>
-    <a href="#">Small Businesses and Brands</a>
+  <div class="footer">
+    <div class="nextdoor">
+      <p>Nextdoor</p>
+      <a href="#">About</a>
+      <a href="#">Media</a>
+      <a href="#">Help</a>
+      <a href="#">Legal and Terms</a>
+    </div>
+    <div class="hood">
+      <p>Neighbourhood</p>
+      <a href="#">Get Started</a>
+      <a href="#">Events</a>
+      <a href="#">Neighbourhoods</a>
+    </div>
+    <div class="businesses">
+      Businesses
+      <a href="#">Food and Entertainement</a>
+      <a href="#">Medical</a>
+      <a href="#">Small Businesses and Brands</a>
+    </div>
   </div>
 
-</div>
-<hr />
-<div class="footer_app">contact</div>
 </div>
 
 {%endblock%}
