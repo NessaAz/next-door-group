@@ -1,6 +1,3 @@
-
-import email
-from pdb import post_mortem
 from . import main_blueprint
 from flask import flash, render_template, redirect, url_for, request
 from flask_login import current_user, login_required
@@ -27,8 +24,7 @@ def addhood():
         pic_file_name = secure_filename(file_name.filename)
         unique_pic_name = str(uuid.uuid1()) + '_' + pic_file_name
         hood_pic = unique_pic_name
-        hood = Hoods(name=form.name.data, about=form.about.data,
-                     hood_pic=hood_pic, user_id=user_id)
+        hood = Hoods(name=form.name.data, about=form.about.data,hood_pic=hood_pic, user_id=user_id)
 
         db.session.add(hood)
         db.session.commit()
@@ -81,14 +77,5 @@ def hoodpage(hood_id):
     hood = Hoods.query.get(hood_id)
     return render_template('hoodpage.html', posts=posts, businesses=businesses, hood=hood)
 
-
-@main_blueprint.route('/join/<id>', methods=['POST', 'GET'])
-@login_required
-def join(id):
-    return redirect(url_for('main_blueprint.hoodpage', hood_id=id))
-
-
-def update(id):
-    hood_name = Hoods.query.get_or_404(id)
-    if request.method == 'POST':
-        """"""
+    
+   

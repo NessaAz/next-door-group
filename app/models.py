@@ -17,8 +17,7 @@ class Users(UserMixin, db.Model):
   secure_password = db.Column(db.String, nullable=False)
   hoods = db.relationship('Hoods', backref='hoods', lazy=True)
   posts = db.relationship('Post', backref='author', lazy=True)
-  hood =db.Column(db.String)
-
+  hood = db.Column(db.String)
 
   @property
   def password(self):
@@ -39,17 +38,18 @@ class Hoods(db.Model):
   id = db.Column(db.Integer, primary_key=True)
   name = db.Column(db.String, unique=True, nullable=False)
   about = db.Column(db.String, nullable=False)
-  members = db.Column(db.Integer, default=1)# on button click update the memebers number
-  hood_pic= db.Column(db.String)
+  # on button click update the memebers number
+  members = db.Column(db.Integer, default=1)
+  hood_pic = db.Column(db.String)
   user_id = db.Column(db.Integer, db.ForeignKey('users.id'))  # admin
-  amenities=db.relationship('Amenities', backref='amenities', lazy=True)
+  amenities = db.relationship('Amenities', backref='amenities', lazy=True)
 
 
 class Amenities(db.Model):
   id = db.Column(db.Integer, primary_key=True)
-  police_contact=db.Column(db.String)
-  hospital_contact=db.Column(db.String)
-  hood_id=db.Column(db.Integer, db.ForeignKey('hoods.id'))
+  police_contact = db.Column(db.String)
+  hospital_contact = db.Column(db.String)
+  hood_id = db.Column(db.Integer, db.ForeignKey('hoods.id'))
 
 
 class Post(db.Model):
@@ -57,11 +57,11 @@ class Post(db.Model):
   title = db.Column(db.String(255), nullable=False)
   content = db.Column(db.Text(), nullable=False)
   user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
-  date_posted  = db.Column(db.DateTime, default=datetime.utcnow)
+  date_posted = db.Column(db.DateTime, default=datetime.utcnow)
 
-    # def save_post(self):
-    #     db.session.add(self)
-    #     db.session.commit()
+  # def save_post(self):
+  #     db.session.add(self)
+  #     db.session.commit()
 
   def __repr__(self):
     return f"Post('{self.title}', '{self.date_posted}')"
@@ -75,10 +75,9 @@ class Business(db.Model):
   description = db.Column(db.Text(), nullable=False)
   user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
-    # def save_post(self):
-    #     db.session.add(self)
-    #     db.session.commit()
+  # def save_post(self):
+  #     db.session.add(self)
+  #     db.session.commit()
 
   def __repr__(self):
     return f"Business('{self.name}')"
-
