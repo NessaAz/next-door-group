@@ -1,5 +1,4 @@
-from enum import unique
-from unicodedata import name
+from email.policy import default
 from . import db, login_manager
 from flask_login import UserMixin, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -18,6 +17,8 @@ class Users(UserMixin, db.Model):
   secure_password = db.Column(db.String, nullable=False)
   hoods = db.relationship('Hoods', backref='hoods', lazy=True)
   posts = db.relationship('Post', backref='author', lazy=True)
+  hood =db.Column(db.String)
+
 
   @property
   def password(self):
