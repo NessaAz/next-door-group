@@ -12,7 +12,6 @@ def login():
     if form.validate_on_submit():
         user = Users.query.filter_by(username = form.username.data).first()
         if user is not None:
-            print("working")
             login_user(user, form.remember.data)
             return redirect(request.args.get('next') or url_for('main_blueprint.home'))
         flash('Invalid username or Password')

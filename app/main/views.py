@@ -83,8 +83,7 @@ def hoodpage(hood_id):
 def join(id):
     return redirect(url_for('main_blueprint.hoodpage', hood_id=id))
 
-
-def update(id):
-    hood_name = Hoods.query.get_or_404(id)
+def update_in_db(name):
+    hood = Hoods.query.get_or_404(name)
     if request.method == 'POST':
         """"""
