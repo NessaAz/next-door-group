@@ -17,7 +17,6 @@ def addhood():
     form = AddHoodForm()
     if form.validate_on_submit():
         user_id = current_user._get_current_object().id
-
         file_name= form.hood_pic.data
         pic_file_name = secure_filename(file_name.filename)
         unique_pic_name=str(uuid.uuid1())+ '_'+ pic_file_name
@@ -36,8 +35,11 @@ def addhood():
 
 @main_blueprint.route('/all_hoods')
 def all_hoods():
-    hoods = Hoods.query.all()
-    return render_template('all_hoods.html', hoods=hoods)
+
+    
+    return render_template('all_hoods.html')
+
+
 
 @main_blueprint.route('/post', methods=['POST', 'GET'])
 def new_post():
@@ -62,7 +64,6 @@ def new_business():
         business = Business(name=form.name.data, email=form.email.data, tel=form.tel.data, description=form.description.data)
         db.session.add(business)
         db.session.commit()
-        flash('Your business has been added successfully!')
 
         return redirect(url_for('main_blueprint.hoodpage',))
     return render_template('business.html', form=form)
@@ -74,6 +75,9 @@ def hoodpage(hood_id):
     businesses = Business.query.all()
     hood= Hoods.query.get(hood_id)
     return render_template('hoodpage.html', posts=posts, businesses=businesses,hood=hood)
+
+ 
+    
 
     
 
