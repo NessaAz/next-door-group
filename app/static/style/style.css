@@ -276,7 +276,13 @@ body {
   line-height: normal;
 }
 
-.popular-text h3,
+
+.popular-text h3
+{
+  color: #163469;
+  font-weight: 900;
+  font-size: 40px;
+}
 .app_text h3 {
   color: #163469;
   font-weight: 900;
@@ -325,20 +331,12 @@ body {
   color: #000080;
 }
 
-
-.footer_cnt {
-  background-color: #f1f2f6;
-}
-
 .footer {
   display: flex;
   justify-content: center;
   margin-top: 30px;
 
 }
-
-
-
 .footer_cnt {
   background-color: #f1f2f6;
   margin-top: 20px;
@@ -512,6 +510,55 @@ body {
   font-weight: bold;
 }
 
+
+
+
+
+@media only screen and (max-width: 600px) {
+  .search_layout {
+    margin-top: -45px;
+  }
+  .search_bar {
+    padding: 30px;
+  }
+  .app_text h3{
+    font-size: 20px;
+    font-weight: 100;
+  }
+  .app-icons{
+    margin-top: 5px;
+  }
+  .about_text {
+    margin-top: 23px;
+    flex-direction: column;
+  }
+  .app-icons div {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    width: 34%;
+    text-align: center;
+    padding: 30px;
+  }
+  .app-icons span {
+    font-size: 50px;
+  }
+  .about_text h2 {
+    font-size: 23px;
+    width: auto;
+    margin-left: 20px;
+  }
+  .about_text p {
+    width: unset;
+  }
+  .app_vect {
+    width: 30%;
+    height: 20%;
+  }
+  .app_text{
+    margin-top: 20px;
+  }
+}
 
 /* ADDHOOD SECTION */
 .hood-btn {
