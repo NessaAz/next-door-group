@@ -18,6 +18,7 @@ def addhood():
     form = AddHoodForm()
     if form.validate_on_submit():
         user_id = current_user._get_current_object().id
+
         file_name= form.hood_pic.data
         pic_file_name = secure_filename(file_name.filename)
         unique_pic_name=str(uuid.uuid1())+ '_'+ pic_file_name
@@ -28,15 +29,20 @@ def addhood():
         db.session.commit()
         
         filename = photos.save(form.hood_pic.data)
-        path = f'images/{filename}'
-        hood.hood_pic = path
+        path = f'{filename}'
+        hood.hood_pic=path
+
 
         return redirect(url_for('main_blueprint.hoodpage', hood_pic = hood_pic))
+
+        return redirect(url_for('main_blueprint.all_hoods',pic=hood.hood_pic))
+
     return render_template('add_hood.html', form=form)
 
 
 @main_blueprint.route('/all_hoods')
 def all_hoods():
+
 
     
     return render_template('all_hoods.html')
@@ -82,3 +88,7 @@ def hoodpage():
     hoods=hoods)
 
     
+
+    hoods = Hoods.query.all()
+    return render_template('all_hoods.html', hoods=hoods)
+
