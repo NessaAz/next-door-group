@@ -15,8 +15,15 @@ def login():
             print("working")
             login_user(user, form.remember.data)
             return redirect(request.args.get('next') or url_for('main_blueprint.home'))
-        flash('Invalid username or Password')
+        flash('Invalid username or Password. SIgn up or try again.')
     return render_template('auth/login.html', form=form)
+
+
+
+@auth_blueprint.route('/dashboard', methods = ['GET','POST'])
+@login_required
+def dashboard():
+    return render_template('auth/dashboard.html')
 
 @auth_blueprint.route('/signup', methods = ["GET","POST"])
 def signup():

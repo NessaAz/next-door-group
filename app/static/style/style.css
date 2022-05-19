@@ -809,3 +809,31 @@ nav ul li{
   color: #f1f2f6;
   opacity: 0.8;
 }
+
+
+/* LOGIN  & SIGN UP*/
+.login-btn {
+  background-color: #fa6b6b;
+  border-color: #fa6b6b;
+  color: #f1f2f6;
+}
+
+.signup-btn {
+  background-color: #fa6b6b;
+  border-color: #fa6b6b;
+  color: #f1f2f6;
+}
+
+.login {
+  background-image: url(/static/images/imagebz.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.signup {
+  background-image: url(/static/images/imagebz.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
