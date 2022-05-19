@@ -5,10 +5,10 @@
     <nav class="nav-part">
         <ul class="ul pt-3 ps-2">
             <p class="text-light fs-1 bold">NextDoor</p>
-            <li class="li"><a class='a' href="/"><i class="fa fa-home"></i>&nbsp;  Home</a></li>
-            <li class="li"><a class='a' href="#"><i class="fa fa-book"></i>&nbsp;  Profile</a></li>
-            <li class="li"><a class='a' href="/all_hoods"><i class="fa fa-phone"></i>&nbsp; Hoods</a></li>
-            <li class="li"><a class='a' href="#"><i class="fa fa-phone"></i>&nbsp; Hood Name </a></li>
+            <li class="li"><a class='a' href="/"><i class="fa fa-home fs-3"></i>&nbsp;  Home</a></li>
+            <li class="li"><a class='a' href="#"><i class="fa fa-book fs-3"></i>&nbsp;  Profile</a></li>
+            <li class="li"><a class='a' href="/all_hoods"><i class="fs-3 fa fa-handshake-o"></i>&nbsp; Hoods</a></li>
+            <li class="li"><a class='a' href="#"><i class="fs-3 fa fa-phone"></i>&nbsp; Hood Name </a></li>
         </ul>
     </nav>
 </div>
@@ -33,7 +33,10 @@
                                 <hr>
                                 <p>Admin: {{hood['user_id']}}</p>
                                 <p>Members: {{hood['members']}}</p>
-                                <a href="{{url_for('main_blueprint.hoodpage', hood_id = hood.id)}}" class="btn join-btn ">Join</a>
+
+                                <form action="{{url_for('main_blueprint.join', id=hood.id)}}" method="POST">
+                                    <input class="btn join-btn" type="submit" value="Join">
+                               </form>
                             </div>
                         </div>
                     {%endfor%}
