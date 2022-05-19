@@ -23,3 +23,4 @@ class BusinessForm(FlaskForm):
     tel = TelField('telephone number', validators=[DataRequired()])
     description = TextAreaField('Content', validators=[DataRequired()])
     submit = SubmitField('Add Business')
+

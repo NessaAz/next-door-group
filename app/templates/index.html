@@ -1,4 +1,4 @@
-{%extends 'base.html'%} 
+{%extends 'base.html'%}
 
 {%block body%}
 <div class="hero-section">
@@ -11,13 +11,24 @@
 
 <div class="search_layout">
   <div class="search_bar">
+
+    <form action="">
+      <select name="" id="">
+        {%for hood in hoods %}
+        <option value="">{{hood['name']}}</option>
+        {%endfor%}
+      </select>
+
+
     <input
       type="text"
       label="search_id"
       class="form-control"
       placeholder="Search Hood"
+      name="searched"
     />
-    <button>Search</button>
+  </form>
+    <button type="submit">Search</button>
   </div>
 </div>
 
@@ -25,10 +36,10 @@
   <div class="about_text">
     <h2>All your neighborhood Questions in one place with Nextdoor</h2>
     <p>
-      It's where communities come together to greet newcomers, exchange
+      Its where communities come together to greet newcomers, exchange
       recommendations, and read the latest local news. Where neighbors support
       local businesses and get updates from public agencies. Where neighbors
-      borrow tools and sell couches. It's how to get the most out of everything
+      borrow tools and sell couches. Its how to get the most out of everything
       nearby. Welcome, neighbor.
     </p>
   </div>
@@ -135,29 +146,20 @@
   </div>
 </div>
 
-<div class="footer_cnt">
-  <div class="footer">
-    <div class="nextdoor">
-      <p>Nextdoor</p>
-      <a href="#">About</a>
-      <a href="#">Media</a>
-      <a href="#">Help</a>
-      <a href="#">Legal and Terms</a>
-    </div>
-    <div class="hood">
-      <p>Neighbourhood</p>
-      <a href="#">Get Started</a>
-      <a href="#">Events</a>
-      <a href="#">Neighbourhoods</a>
-    </div>
-    <div class="businesses">
-      Businesses
-      <a href="#">Food and Entertainement</a>
-      <a href="#">Medical</a>
-      <a href="#">Small Businesses and Brands</a>
-    </div>
-  </div>
 
+
+
+<div class="container-fluid justify-content-center px-0 ">
+  <footer>
+      <div class="row justify-content-around mb-0 pt-5 mx-4">
+          <div class="col-xl-2 col-md-4 order-xl-1 order-4 mr-xl-0 my-auto"><ul class="list-unstyled mt-md-3 mt-5"><li>Social Media</li><li class="social"> <span> <i class="fa fa-facebook" aria-hidden="true"></i></span>  <span> <i class="fa fa-instagram" aria-hidden="true"></i> </span> <span> <i class="fa fa-twitter" aria-hidden="true"></i> </span> </li></ul><ul class="list-unstyled my-xl-4 my-md-3"></ul> </div>
+          <div class="col-xl-2 col-md-3 pt-4 order-1"><ul class="list-unstyled"><li class="mt-md-0 mt-4">Our Solution</li><li>Intergrated Security </li><li>Core Features</li><li>Product Features</li><li>Pricing</li></ul></div>
+          <div class="col-xl-2 col-md-3 pt-4 order-2"><ul class="list-unstyled"><li class="mt-md-0 mt-4">Your needs</li><li>Intergrated Security </li><li>Core Features</li><li>Product Features</li><li>Pricing</li></ul></div>
+          <div class="col-xl-auto col-md-3 pt-4 my-sm-0 order-md-3 order-sm-1 "><ul class="list-unstyled"><li class="mt-md-0 mt-4">Offer</li><li>Intergrated Security </li><li>Core Features</li><li>Product Features</li><li>Pricing</li></ul></div>
+          <div class="col-xl-auto col-md-6 col-12  pt-4 my-sm-0 order-6  "><div class="form-group "><label for="email" class="mb-3"><b>Subscribe to our newsletter and Get 10% off</b></label><input type="email" class="form-control form-control-lg" placeholder="Enter email" id="email"></div><button type="button" class="btn btn-primary btn-lg btn-block my-2 Subscribe mt-4 mb-3">Subscribe</button></div>
+      </div>
+
+  </footer>
 </div>
 
 {%endblock%}
