@@ -1,25 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-
-* {
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    font-family: 'Varela Round', sans-serif;
-}
-
-
 body {
     margin: 0;
     padding: 0;
     font-family: "Varela Round", sans-serif;
 }
-
 .navbar {
     color: #f1f2f6;
 }
 
 .nav-link {
     color: #f1f2f6;
+}
+.navbar-brand{
+    color: #fff;
+}
+
+.logo {
+    color: #fff;
+    font-weight: bold;
 }
 
 .hero-section {
@@ -265,9 +263,37 @@ body {
 
 }
 
+.add-hood-logo a{
+    text-decoration: none;
+
 .navbar-brand{
+
     color: #fff;
 }
+
+.add-hood-profile{
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.add-hood-profile:hover{
+    color:#163469;
+}
+
+.dropdown-toggle{
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+.dropdown-toggle:hover{
+        color: #163469;
+}
+.dropdown-item{
+    color: #163469;
+}
+.dropdown-item:hover{
+    color: #163469;
 
 .logo {
     color: #fff;
