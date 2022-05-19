@@ -3,42 +3,51 @@
 <link rel="stylesheet" href="{{url_for('static', filename=" style/font-awesome.min.css")}}">
 {%endblock%}
 
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg ps-3">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+
+    <div class="logo">
+      <i class="fa fa-circle fs-5" style='color: #fa6b6b;' aria-hidden="true"></i>
+      <span class="fs-4">
+        <a class="navbar-brand" href="{{url_for('main_blueprint.home')}}">Logo</a></span>
+    </div>
+    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
       aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-        </li>
-        {%if current_user.is_authenticated%}
-        <li class="nav-item">
-          <a class="nav-link" href="/auth/logout">Logout</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/add_hood">Add Hood</a>
-        </li>
-        {%else%}
-        <li class="nav-item">
-          <a class="nav-link" href="/auth/signup">Signup</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/auth/login">Login</a>
-        </li>
-        {%endif%}
 
-      </ul>
-      <form class="d-flex" role="search">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          {%if current_user.is_authenticated%}
+          <li class="nav-item">
+            <a class="nav-link fs-6" href="/add_hood">Add Hood</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-6" href="#">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-6" href="/auth/logout">Logout</a>
+          </li>
+          {%else%}
+          <li class="nav-item">
+            <a class="nav-link fs-6" href="/auth/signup">Signup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-6" href="/auth/login">Login</a>
+          </li>
+          {%endif%}
+
+        </ul>
+
+        <!-- <form class="d-flex" role="search">
         <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
+      </form> -->
+      </div>
   </div>
 </nav>

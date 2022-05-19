@@ -36,6 +36,7 @@ class Hoods(db.Model):
   name = db.Column(db.String, unique=True, nullable=False)
   about = db.Column(db.String, nullable=False)
   members = db.Column(db.Integer, default=1)# on button click update the memebers number
+  hood_pic= db.Column(db.String)
   user_id = db.Column(db.Integer, db.ForeignKey('users.id'))  # admin
   amenities=db.relationship('Amenities', backref='amenities', lazy=True)
 

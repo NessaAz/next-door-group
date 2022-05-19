@@ -1,18 +1,29 @@
 {%extends 'base.html'%} 
 
 {%block body%}
-{% include 'navbar.html' %}
 
 <div class="hero-section">
+  {% include 'navbar.html' %}
   <div class="hero-text">
-    <h1>Neighborhood</h1>
+    <h1>Nextdoor</h1>
     <p>Search for your Neighborhood,Town or City</p>
+  </div>
+</div>
+<div class="search_layout">
+  <div class="search_bar">
+    <input
+      type="text"
+      label="search_id"
+      class="form-control"
+      placeholder="Search Hood"
+    />
+    <button>Search</button>
   </div>
 </div>
 
 <div class="about">
   <div class="about_text">
-    <h2>All your neighborhood Questions in one place with Neighborhood</h2>
+    <h2>All your neighborhood Questions in one place with Nextdoor</h2>
     <p>
       It's where communities come together to greet newcomers, exchange
       recommendations, and read the latest local news. Where neighbors support
@@ -22,10 +33,44 @@
     </p>
   </div>
 
+
+  <div class="app-icons">
+    <div>
+
+      <span class="material-symbols-outlined"> security_update_good </span>
+      <p>
+        Relevant news and information from neighbors, businesses, and public
+        agencies in real time.
+      </p>
+    </div>
+    <div>
+      <span class="material-symbols-outlined"> edit_location </span>
+      <p>
+        The only way to instantly connect to the people, businesses, and
+        happenings near your home.
+      </p>
+    </div>
+    <div>
+      <span class="material-symbols-outlined"> cottage </span>
+      <p>A secure environment where all neighbors are verified.</p>
+    </div>
+
+
   <div class="app-icons text-center">
+
     <span class="material-symbols-outlined"> security_update_good </span>
+    <p>
+    Relevant news and information from neighbors, businesses, and public agencies in real time.</p>
+  </div>
+  <div>
     <span class="material-symbols-outlined"> edit_location </span>
+    <p>The only way to instantly connect to the people, businesses, and happenings near your home.</p>
+  </div>
+  <div>
     <span class="material-symbols-outlined"> cottage </span>
+    <p>A secure environment where all neighbors are verified.</p>
+  </div>
+
   </div>
   <div class="vector_text text-center"  >
     <p>Instantly connect with your neighborhood</p>
@@ -37,35 +82,92 @@
     <img src="{{url_for('static', filename='/images/phone.jpg')}}" alt="" />
   </div>
   <div class="app_text">
-    <p>The go-to app for ......</p>
+    <h3>The go-to app for ......</h3>
     <p>
       Download the free Nextdoor app for expertise you can count on,<br />
       and fit in with confidence.
     </p>
 
     <div>
-      <span  class="material-symbols-outlined"> contact_support </span>
+      <span class="material-symbols-outlined"> contact_support </span>
       Support on your journey
     </div>
     <div>
       <span class="material-symbols-outlined"> tips_and_updates </span>Updates
       and reminders
     </div>
+    <div class="app_badges">
+      <img
+        src="{{url_for('static', filename='/images/apple.png')}}"
+        alt="apple-badge"
+      />
+      <img
+        id="google"
+        src="{{url_for('static', filename='/images/google-play-badge.png')}}"
+        alt=""
+      />
+    </div>
   </div>
 </div>
 
+<div class="popular">
+  <div class="popular-text">
+    <h3>Some Popular Hoods</h3>
+    <p>Choose between popular hoods and get to know all there is about them</p>
+  </div>
 
+  <div class="popular-images1">
+    <div class="img_pop">
+      <img src="{{url_for('static', filename='/images/nbh1.jpg')}}" alt="" />
+    </div>
+    <div class="img_pop">
+      <img src="{{url_for('static', filename='/images/nbh2.jpg')}}" alt="" />
+    </div>
+    <div class="img_pop">
+      <img src="{{url_for('static', filename='/images/nbh3.jpg')}}" alt="" />
+    </div>
+    <img src="" alt="" />
+  </div>
 
+  <div class="popular-images2">
+    <div class="img_pop">
+      <img src="{{url_for('static', filename='/images/nbh4.jpg')}}" alt="" />
+    </div>
+    <div class="img_pop">
+      <img src="{{url_for('static', filename='/images/nbh5.jpg')}}" alt="" />
+    </div>
+    <div class="img_pop">
+      <img src="{{url_for('static', filename='/images/nbh6.jpg')}}" alt="" />
+    </div>
+    <img src="" alt="" />
+  </div>
+</div>
 
+<div class="footer_cnt">
+<div class="footer">
+  <div class="nextdoor">
+    <p>Nextdoor</p>
+    <a href="#">About</a>
+    <a href="#">Media</a>
+    <a href="#">Help</a>
+    <a href="#">Legal and Terms</a>
+  </div>
+  <div class="hood">
+    <p>Neighbourhood</p>
+    <a href="#">Get Started</a>
+    <a href="#">Events</a>
+    <a href="#">Neighbourhoods</a>
+  </div>
+  <div class="businesses">
+    Businesses
+    <a href="#">Food and Entertainement</a>
+    <a href="#">Medical</a>
+    <a href="#">Small Businesses and Brands</a>
+  </div>
 
-
-
-
-
-
-
-
-
-
+</div>
+<hr />
+<div class="footer_app">contact</div>
+</div>
 
 {%endblock%}
