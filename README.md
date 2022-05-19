@@ -13,8 +13,8 @@ This is a neighbourhood application to allow members to see information, news an
 ## Usage
 * Fork the repository and pull the files to your local environment
 * Install flask and a virtual env.
-* Insatll dependencies withign the virtual env
-* The requirements.text will guide you on the needed modules. 
+* Install dependencies within the virtual env
+* The pipfile will guide you on the needed modules. 
 * Run the application by tyiping `python3.10 run.py`
 
 ## Issues
