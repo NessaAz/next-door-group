@@ -35,7 +35,7 @@ def addhood():
         return redirect(url_for('main_blueprint.all_hoods'))
     return render_template('add_hood.html', form=form)
 
-@main_blueprint.route('/')
+
 @main_blueprint.route('/all_hoods')
 def all_hoods():
     hoods = Hoods.query.all()

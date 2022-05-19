@@ -944,7 +944,7 @@ li:not(:first-child) {
 }
 
 
-.post-card>.post-content {
+.post-card>.post-content 
 
 .post-card > p,
 .post-card > div {
