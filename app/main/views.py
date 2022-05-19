@@ -77,5 +77,6 @@ def hoodpage(hood_id):
 
     
 
-
-
+@main_blueprint.route('/join')
+def join():
+    """"""
