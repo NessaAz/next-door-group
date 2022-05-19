@@ -421,7 +421,6 @@ body {
     background-image: url(/static/images/hoods.png);
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100vw;
     height: 50vh;
 }
 
@@ -437,9 +436,8 @@ body {
 
 .add-hood-logo a{
     text-decoration: none;
-
+}
 .navbar-brand{
-
     color: #fff;
 }
 
@@ -466,7 +464,7 @@ body {
 }
 .dropdown-item:hover{
     color: #163469;
-
+}
 .logo {
     color: #fff;
     font-weight: bold;
@@ -476,5 +474,29 @@ body {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
+}
+
+/* ALL HOODS  */
+.join-btn{
+    background-color: #fa6b6b;
+    border-color: #fa6b6b;
+    color: #f1f2f6;
+}
+.join-btn:hover{
+    color: #f1f2f6;
+    opacity: 0.8;
+}
+
+
+
+
+
+/* CUSTOM MEDIA QUERIES */
+
+@media (max-width: 767.98px) {
+    .add-hood-profile-section{
+        display: none;
+    }
+
 }
 
