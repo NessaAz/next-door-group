@@ -1,3 +1,6 @@
+
+import email
+from pdb import post_mortem
 from . import main_blueprint
 from flask import flash, render_template, redirect, url_for, request
 from flask_login import current_user, login_required
@@ -11,7 +14,8 @@ import os
 
 @main_blueprint.route('/')
 def home():
-    return render_template('index.html')
+    hoods = Hoods.query.all()
+    return render_template('index.html',hoods=hoods)
 
 
 @main_blueprint.route('/add_hood', methods=['POST', 'GET'])
@@ -34,11 +38,11 @@ def addhood():
         return redirect(url_for('main_blueprint.all_hoods'))
     return render_template('add_hood.html', form=form)
 
-
+@main_blueprint.route('/')
 @main_blueprint.route('/all_hoods')
 def all_hoods():
     hoods = Hoods.query.all()
-    return render_template('all_hoods.html', hoods=hoods)
+    return render_template('all_hoods.html',hoods=hoods)
 
 
 @main_blueprint.route('/post', methods=['POST', 'GET'])
