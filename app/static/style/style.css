@@ -874,7 +874,7 @@ li:not(:first-child) {
   background-color: #fa6b6b;
   border-color: #fa6b6b;
   color: #f1f2f6;
-
+}
 .join-btn:hover {
   color: #f1f2f6;
   opacity: 0.8;
@@ -1017,4 +1017,20 @@ nav ul li{
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+}
+
+
+
+/* DASHBOARD */
+
+.dashboard {
+  background-image: url(/static/images/imagebz.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.carddb{
+  opacity: 0.7;
+  width: 100vw;
 }
