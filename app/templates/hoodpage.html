@@ -37,7 +37,7 @@
 </div>
 
 <div class="huria row container-fluid">
-    <h2 class="hood-name">Hood Name</h2>
+    <h2 class="hood-name">{{ hood.name }}</h2>
     <div class="col ">
         <form action="{{url_for('main_blueprint.new_post', id=hood.id)}}" method="POST">
             <input class="btn btn-danger business-btn " type="submit" value="Add Post">
@@ -50,8 +50,8 @@
 
                 <div class="post-card">
                     <p>{{ post.title }}</p>
-                    <p class="post-content">{{ post.content }}</p>
-                    <p>By: {{ post.author }}</p>
+                    <p>{{ post.content }}</p>
+                    <p class="post-content">By: {{ post.author }}</p>
                 </div>
                 {% endfor %}
 
@@ -70,8 +70,6 @@
                     <div class="col-md-7">
                         <div class="card-body">
                             <img class="rounded-circle article-img" src="{{ url_for('static', filename='images/uploads' + hood.hood_pic) }}">
-                            <h5 class="card-title tt">{{ hood.name }}
-                            </h5>
                             <h6 class="card-text">
                                 <span><strong>Members: </strong>{{hood.members}}</span>
                             </h6>
