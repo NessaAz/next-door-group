@@ -2,7 +2,15 @@
     "_meta": {
         "hash": {
 
+            "sha256": "c2b890425e334ef1475bdff74efbf7bec1d8b81d2f19b4789936d7790e0b291f"
+
+
             "sha256": "36825f6e51c6e1a8238837b5cfeb95c25d27bcec6450d73a9b40e9a67f12c750"
+
+
+            "sha256": "e594f2e9a20b54d9b919e97e77bc6adae39d7bf520d53c9b15f2ff11265fa84d"
+
+
         },
         "pipfile-spec": 6,
         "requires": {
@@ -148,6 +156,14 @@
             ],
             "markers": "python_version >= '3' and platform_machine == 'aarch64' or (platform_machine == 'ppc64le' or (platform_machine == 'x86_64' or (platform_machine == 'amd64' or (platform_machine == 'AMD64' or (platform_machine == 'win32' or platform_machine == 'WIN32')))))",
             "version": "==1.1.2"
+        },
+        "gunicorn": {
+            "hashes": [
+                "sha256:9dcc4547dbb1cb284accfb15ab5667a0e5d1881cc443e0677b4882a4067a807e",
+                "sha256:e0a968b5ba15f8a328fdfd7ab1fcb5af4470c28aaf7e55df02a99bc13138e6e8"
+            ],
+            "index": "pypi",
+            "version": "==20.1.0"
         },
         "importlib-metadata": {
             "hashes": [
@@ -381,6 +397,8 @@
             "version": "==0.10.2"
         },
 
+
+
         "uploads": {
             "hashes": [
                 "sha256:7d3c6573e6a753f0bc810ef7959b4898105a8063a5d3110ac038843021de988a",
@@ -389,6 +407,7 @@
             "index": "pypi",
             "version": "==0.8"
         },
+
 
         "werkzeug": {
             "hashes": [
@@ -413,6 +432,7 @@
             ],
 
             "markers": "python_version >= '3.7'",
+
             "version": "==3.8.0"
         }
     },
