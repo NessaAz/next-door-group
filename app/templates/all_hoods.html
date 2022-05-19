@@ -34,11 +34,6 @@
                                 <p>Members: {{hood['members']}}</p>
 
                                 <a class="btn join-btn" href="{{url_for('main_blueprint.hoodpage', hood_id=hood.id)}}">View</a>
-
-
-                                <form action="{{url_for('main_blueprint.join', id=hood.id)}}" method="POST">
-                                    <input class="btn-danger add-btn" type="submit" value="Join">
-
                                </form>
                             </div>
                         </div>
