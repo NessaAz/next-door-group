@@ -23,8 +23,7 @@ def addhood():
         pic_file_name = secure_filename(file_name.filename)
         unique_pic_name = str(uuid.uuid1()) + '_' + pic_file_name
         hood_pic = unique_pic_name
-        hood = Hoods(name=form.name.data, about=form.about.data,
-                     hood_pic=hood_pic, user_id=user_id)
+        hood = Hoods(name=form.name.data, about=form.about.data,hood_pic=hood_pic, user_id=user_id)
 
         db.session.add(hood)
         db.session.commit()
@@ -81,9 +80,10 @@ def hoodpage(hood_id):
 @main_blueprint.route('/join/<id>', methods=['POST', 'GET'])
 @login_required
 def join(id):
+    hood = Hoods.query.get_or_404(id)
+    Users.hood = hood
+    # update the Users table here
     return redirect(url_for('main_blueprint.hoodpage', hood_id=id))
 
-def update_in_db(name):
-    hood = Hoods.query.get_or_404(name)
-    if request.method == 'POST':
-        """"""
+    
+   
