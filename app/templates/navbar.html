@@ -1,6 +1,6 @@
 {%block styles%}
-<link rel="stylesheet" href="{{url_for('static', filename="style/style.css")}}">
-<link rel="stylesheet" href="{{url_for('static', filename="style/font-awesome.min.css")}}">
+<link rel="stylesheet" href="{{url_for('static', filename=" style/style.css")}}">
+<link rel="stylesheet" href="{{url_for('static', filename=" style/font-awesome.min.css")}}">
 {%endblock%}
 
 <nav class="navbar navbar-expand-lg ps-3">
@@ -8,17 +8,18 @@
 
 
     <a class="navbar-brand" href="#"><img src="" width=54px; alt=""></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-
-<a class="navbar-brand" href="#"></a>
-
-    <div class="logo">
-      <i class="fa fa-circle fs-5" style='color: #fa6b6b;' aria-hidden="true"></i>
-      <span class="fs-4">
-        <a class="navbar-brand" href="{{url_for('main_blueprint.home')}}">Logo</a></span>
-    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
       aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+
+      <a class="navbar-brand" href="#"></a>
+
+      <div class="logo">
+        <i class="fa fa-circle fs-5" style='color: #fa6b6b;' aria-hidden="true"></i>
+        <span class="fs-4">
+          <a class="navbar-brand" href="{{url_for('main_blueprint.home')}}">Logo</a></span>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">

@@ -1,6 +1,3 @@
-
-import email
-from pdb import post_mortem
 from . import main_blueprint
 from flask import flash, render_template, redirect, url_for, request
 from flask_login import current_user, login_required
@@ -79,15 +76,6 @@ def hoodpage(hood_id):
     businesses = Business.query.all()
     hood = Hoods.query.get(hood_id)
     return render_template('hoodpage.html', posts=posts, businesses=businesses, hood=hood)
-
-
-@main_blueprint.route('/join/<id>', methods=['POST', 'GET'])
-@login_required
-def join(id):
-    hood = Hoods.query.get_or_404(id)
-    Users.hood = hood
-    # update the Users table here
-    return redirect(url_for('main_blueprint.hoodpage', hood_id=id))
 
     
    
