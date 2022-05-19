@@ -33,7 +33,10 @@
                                 <hr>
                                 <p>Admin: {{hood['user_id']}}</p>
                                 <p>Members: {{hood['members']}}</p>
-                                <a href="{{url_for('main_blueprint.hoodpage', hood_id = hood.id)}}" class="btn join-btn ">Join</a>
+
+                                <form action="{{url_for('main_blueprint.join', id=hood.id)}}" method="POST">
+                                    <input class="btn join-btn" type="submit" value="Join">
+                               </form>
                             </div>
                         </div>
                     {%endfor%}

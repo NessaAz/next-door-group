@@ -2,7 +2,7 @@ from . import main_blueprint
 from flask import flash, render_template, redirect, url_for, request
 from flask_login import current_user, login_required
 from .forms import AddHoodForm, BusinessForm, PostForm
-from ..models import Business, Hoods, Post
+from ..models import Business, Hoods, Post, Users
 from .. import db, photos
 from werkzeug.utils import secure_filename
 import uuid
@@ -45,11 +45,9 @@ def new_post():
     if form.validate_on_submit():
         user_id = current_user._get_current_object().id
         post = Post(title=form.title.data, content=form.content.data, author=current_user)
-
         db.session.add(post)
         db.session.commit()
         flash('Your post has been created!', 'success')
-
         return redirect(url_for('main_blueprint.hoodpage'))
     return render_template('post.html', form=form)
 
@@ -63,8 +61,7 @@ def new_business():
         db.session.add(business)
         db.session.commit()
         flash('Your business has been added successfully!')
-
-        return redirect(url_for('main_blueprint.hoodpage',))
+        return redirect(url_for('main_blueprint.hoodpage'))
     return render_template('business.html', form=form)
 
 
@@ -77,6 +74,18 @@ def hoodpage(hood_id):
 
     
 
-@main_blueprint.route('/join')
-def join():
-    """"""
+@main_blueprint.route('/join/<id>', methods=['POST', 'GET'])
+@login_required
+def join(id):
+    return redirect(url_for('main_blueprint.hoodpage', hood_id=id))
+
+def update(id):
+    hood_name = Hoods.query.get_or_404(id)
+    if request.method == 'POST':
+        """"""
+        
+
+
+    
+    
+
