@@ -36,6 +36,6 @@ def addhood():
 
 @main_blueprint.route('/all_hoods')
 def all_hoods():
-
     
-    return render_template('all_hoods.html')
+    hoods = Hoods.query.all()
+    return render_template('all_hoods.html', hoods=hoods)
