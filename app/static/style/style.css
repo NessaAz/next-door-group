@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-
-*{
+body {
     margin: 0;
     padding: 0;
     font-family: "Varela Round", sans-serif;
 }
-
 .navbar {
     color: #f1f2f6;
 }
@@ -267,9 +265,12 @@
 
 .add-hood-logo a{
     text-decoration: none;
+
+.navbar-brand{
+
     color: #fff;
-    font-weight: bold;
 }
+
 .add-hood-profile{
     color: #fff;
     font-weight: bold;
@@ -293,4 +294,14 @@
 }
 .dropdown-item:hover{
     color: #163469;
+
+.logo {
+    color: #fff;
+    font-weight: bold;
+}
+
+.add-hood-logo a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
 }

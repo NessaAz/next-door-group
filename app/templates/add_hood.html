@@ -2,6 +2,7 @@
 
 {%block body%}
 <div class="container-fluid add-hood">
+
     <div class="d-flex justify-content-between ps-5 ms-5 pe-5 me-5 ">
             <div class="add-hood-logo pt-3 mt-3">
                 <i class="fa fa-circle fs-5" style='color: #fa6b6b;' aria-hidden="true"></i>
@@ -30,10 +31,26 @@
                   </ul>
             {%endif%}
         </div>
+
+        <i class="fa fa-circle pt-3" style='color: #fa6b6b;' aria-hidden="true"></i>
+        <div class="add-hood-logo ps-3">
+        <span class="fs-4">
+            <a href="{{url_for('main_blueprint.home')}}">Logo</a>
+        </span>
+    </div>
+
+    <div class="add-hood-text fs-3 mt-5 pt-5 ps-3">
+        Add your hood from here
+
     </div>
     <div class="add-hood-text fs-3 ps-5 ms-5 pe-5 me-5 pt-5 mt-5 ">Add your hood from here</div>
 </div>
 
+<div class="container-fluid add-hood-form">
+    <div class="row">
+        <div class="col-md-6 ">
+            some other text
+        </div>
 
 <div class="container-fluid add-hood-form">
             <div class="row">
@@ -77,3 +94,4 @@
             </div>
 </div>
 {%endblock%}
+
