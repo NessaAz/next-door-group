@@ -1,11 +1,6 @@
-
-{%extends 'base.html'%} {%block body%}
-
 {%extends 'base.html'%} 
 
 {%block body%}
-
-
 <div class="hero-section">
   {% include 'navbar.html' %}
   <div class="hero-text">
@@ -13,6 +8,7 @@
     <p>Search for your Neighborhood,Town or City</p>
   </div>
 </div>
+
 <div class="search_layout">
   <div class="search_bar">
     <input
@@ -64,6 +60,7 @@
     <button><a href="/auth/signup">Sign Up</a></button>
   </div>
 </div>
+
 <div class="app_content">
   <div class="app_vect">
     <img src="{{url_for('static', filename='/images/phone.jpg')}}" alt="" />
