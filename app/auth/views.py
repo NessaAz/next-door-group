@@ -19,13 +19,6 @@ def login():
 
 
 
-@auth_blueprint.route('/dashboard', methods = ['GET','POST'])
-@login_required
-def dashboard():
-    return render_template('auth/dashboard.html')
-
-
-
 @auth_blueprint.route('/signup', methods = ["GET","POST"])
 def signup():
     form = SignupForm()

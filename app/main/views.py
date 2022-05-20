@@ -78,4 +78,11 @@ def hoodpage(hood_id):
     return render_template('hoodpage.html', posts=posts, businesses=businesses, hood=hood)
 
     
-   
+
+
+
+
+@main_blueprint.route('/dashboard', methods = ['GET','POST'])
+@login_required
+def dashboard():
+    return render_template('/profile/dashboard.html')
