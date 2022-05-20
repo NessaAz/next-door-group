@@ -1059,17 +1059,15 @@ nav ul li{
 }
 
 .login {
-  background-image: url(/static/images/imagebz.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
+  background-color: #f8ceec;
+  background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+  
+  
 }
 
 .signup {
-  background-image: url(/static/images/imagebz.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
+  background-color: #f8ceec;
+  background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
 }
 
 
@@ -1081,9 +1079,13 @@ nav ul li{
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  
 }
 
 .carddb{
   opacity: 0.7;
   width: 100vw;
+  margin-top: 75px;
+  margin-right: 75px;
+  margin-left: 75px;
 }
