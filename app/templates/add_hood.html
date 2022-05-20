@@ -6,7 +6,7 @@
         <div class="add-hood-logo ">
             <i class="fa fa-circle fs-5" style='color: #fa6b6b;' aria-hidden="true"></i>
             <span class="fs-4">
-                <a href="{{url_for('main_blueprint.home')}}">Logo</a>
+                <a href="{{url_for('main_blueprint.home')}}">Nextdoor</a>
             </span>
         </div>
         <div class="add-hood-profile-section pe-5">
@@ -18,15 +18,13 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
                         <li>
-                            <a class="dropdown-item" href="#"><i class="fa fa-user" aria-hidden="true"></i>Dashboard</a>
+                            <a class="dropdown-item" href="/dashboard"><i class="fa fa-user" aria-hidden="true"></i>Dashboard</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="/auth/logout"><i class="fa fa-sign-out"
-                                    aria-hidden="true"></i>Logout</a>
+                            <a class="dropdown-item" href="/all_hoods"><i class="fa fa-handshake-o"></i>Hoods</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="{{url_for('main_blueprint.all_hoods')}}"><i
-                                    class="fa fa-handshake-o"></i>Hoods</a>
+                            <a class="dropdown-item" href="/auth/logout"><i class="fa fa-sign-out"></i>Logout</a>
                         </li>
                     </ul>
                 </li>
@@ -62,13 +60,14 @@
             </div>
 
             <div class="fs-1 mt-5 border-rounded ">
-                <div class='border-rounded' style="box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;">
+                <div class='border-rounded'
+                    style="box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;">
                     <div class="border-rounded card ">
                         <div class="p-3" style="font-size: 20px;">
                             <strong>
                                 <h5 style="color: #163469; font-weight:bold">
                                     <i class="fa fa-heart" style="color: #163469" aria-hidden="true"></i>
-                                    Community Love 
+                                    Community Love
                                 </h5>
                             </strong>
                             <p>
