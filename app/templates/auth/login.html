@@ -2,7 +2,7 @@
 
 {% block body %}
 
-<div class="login">
+<div class="container-fluid login">
     {% include 'navbar.html' %}
     <div class="row">
         <div class="col-md-3"></div>
@@ -15,6 +15,7 @@
 
                 <div class="mb-3">
                 {{form.hidden_tag()}}
+
                 {% if form.errors %}
                 {{form.errors['username']}}
                 {{form.errors['password']}}
@@ -28,6 +29,7 @@
 
                 <form action="" method="POST" class="form-group">
                     {{form.hidden_tag()}}
+
                     {% if form.errors %}
                     {{form.errors['email']}}
                     {{form.errors['password']}}
