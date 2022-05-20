@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_migrate import Migrate
 from flask_uploads import UploadSet,configure_uploads,IMAGES
+from flask_share import Share
 
 login_manager = LoginManager()
 login_manager.session_protection = 'strong'
@@ -13,6 +14,8 @@ photos = UploadSet('photos',IMAGES)
 
 db = SQLAlchemy()
 from .models import Users
+
+share = Share()
 
 
 
@@ -36,6 +39,8 @@ def create_app(config_name):
     migrate = Migrate(app, db)
 
     configure_uploads(app,photos)
+
+    share.init_app(app)
 
 
     return app

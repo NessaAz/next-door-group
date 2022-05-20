@@ -14,7 +14,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Add Your Business</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -46,13 +46,13 @@
                         {{form.description.label(class='form-label')}}
                         {{form.description(class='form-control')}}
                     </div>
+                    <div class="modal-footer">
+                        <div class="mb-3">
+                            {{form.submit(class='btn post-btn rounded mt-3')}}
+                        </div>
+                    </div>
                 </form>
 
-            </div>
-            <div class="modal-footer">
-                <div class="mb-3">
-                    {{form.submit(class='btn post-btn rounded mt-3')}}
-                </div>
             </div>
         </div>
     </div>
