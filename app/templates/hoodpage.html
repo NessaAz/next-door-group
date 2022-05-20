@@ -18,7 +18,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
                         <li>
-                            <a class="dropdown-item" href="#"><i class="fa fa-user" aria-hidden="true"></i>Dashboard</a>
+                            <a class="dropdown-item" href="/dashboard"><i class="fa fa-user" aria-hidden="true"></i>Dashboard</a>
                         </li>
                         <hr>
                         <li>
@@ -69,7 +69,6 @@
                     {%for hood in hoods%}
                     <div class="col-md-7">
                         <div class="card-body">
-                            <img class="rounded-circle article-img" src="{{ url_for('static', filename='images/uploads' + hood.hood_pic) }}">
                             <h6 class="card-text">
                                 <span><strong>Members: </strong>{{hood.members}}</span>
                             </h6>

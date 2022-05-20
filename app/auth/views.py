@@ -15,14 +15,7 @@ def login():
             login_user(user, form.remember.data)
             return redirect(request.args.get('next') or url_for('main_blueprint.home'))
         flash('Invalid username or Password. SIgn up or try again.')
-    return render_template('auth/dashboard.html', form=form)
-
-
-
-@auth_blueprint.route('/dashboard', methods = ['GET','POST'])
-@login_required
-def dashboard():
-    return render_template('auth/dashboard.html')
+    return render_template('auth/login.html', form=form)
 
 
 
